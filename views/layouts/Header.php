@@ -10,20 +10,18 @@
 
       </a>
       <div>
-        <a href="/" class="text-decoration-none text-muted ms-5">
+        <a href="/" class="text-decoration-none text-muted ms-5 <?= empty($_GET['page']) || $_GET['page'] == 'home' ? 'active' : '' ?>">
           Beranda
         </a>
-        <a href="?page=lapor" class="text-decoration-none text-muted ms-5">
+        <a href="?page=lapor" class="text-decoration-none text-muted ms-5 <?= isset($_GET['page']) && $_GET['page'] == 'lapor' ? 'active' : '' ?>">
           Lapor
         </a>
-        <a href="?page=about-us" class="text-decoration-none text-muted ms-5">
+        <a href="?page=monitoring" class="text-decoration-none text-muted ms-5">
+          Monitoring Laporan
+        </a>
+        <a href="?page=about-us" class="text-decoration-none text-muted ms-5" <?= isset($_GET['page']) && $_GET['page'] == 'about-us' ? 'active' : '' ?>>
           Tentang Lapor
         </a>
-        <?php if (isset($_SESSION['user'])) : ?>
-          <a href="?page=monitoring" class="text-decoration-none text-muted ms-5">
-            Monitoring Laporan
-          </a>
-        <?php endif; ?>
       </div>
     </div>
   </div>

@@ -21,7 +21,6 @@ session_start();
     rel="stylesheet">
   <link rel="stylesheet" href="./views/assets/style.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="sweetalert2.min.css">
   <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.datatables.net/2.1.4/css/dataTables.dataTables.css" />
   <script src="https://cdn.datatables.net/2.1.4/js/dataTables.js"></script>

@@ -27,6 +27,7 @@ CREATE TABLE kategori_layanan (
 CREATE TABLE pengaduan (
     id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nama_pelapor VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL,
     jenis_kelamin ENUM('L', 'P') NOT NULL,
     usia INTEGER NULL,
     phone VARCHAR(15) NULL,
