@@ -1,18 +1,35 @@
 body {
   font-family: "Open Sans", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
   color: #333;
   background-color: #f8f9fa;
+}
+
+nav {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000 !important;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
 }
 
 .bg-transparent {
   background-color: transparent !important;
 }
 
-.btn {
-  padding: 10px 20px;
+.btn-sm {
+  padding: 5px 10px !important;
+  font-size: 12px;
 }
+
+
 
 .fs-24 {
   font-size: 24px !important;
@@ -45,8 +62,10 @@ body {
 .accordion-header {
   background-color: white;
   color: #333;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: none;
   text-align: left;
 }
@@ -80,7 +99,7 @@ body {
 .accordion-body {
   background-color: white;
   color: #333;
-  font-size: 14px;
+  font-size: 13px;
   border: none;
   text-align: left;
 }
@@ -111,7 +130,7 @@ body {
     width: 100%; /* Full width to cover the gap */
     height: 2px;
     background-color: #ddd; /* Color of the connecting line */
-    z-index: 0;
+    z-index: -1;
   }
   
   .bs-wizard-step .bg-brand {
@@ -140,7 +159,7 @@ body {
 
 #bg-home {
   width: 100%;
-  height: 50vh;
+  height: 70vh;
   padding-top: 10vh;
 }
 
@@ -184,6 +203,20 @@ footer {
 .btn-brand {
   background-color: #5777ba;
   color: #fff;
+}
+
+.card {
+  border: none !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  /* Berikan shadow putih */
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.699);
 }
 
 .btn-outline-brand {
@@ -267,11 +300,34 @@ footer {
   box-shadow: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
-  padding: 10px 15px;
+  padding: 7px 14px;
+  font-size: 13px;
+}
+
+.form-control:focus {
+  border: 1px solid #5777ba;
+}
+
+.form-select {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: white !important;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  padding: 7px 14px;
+  font-size: 13px;
+}
+
+.form-select:focus {
+  border: 1px solid #5777ba;
+  font-size: 13px;
+  -webkit-box-shadow: none;
 }
 
 /* placehodler form-control */
 .form-control::placeholder {
   color: #ccc;
+  font-size: 13px;
 }
 
