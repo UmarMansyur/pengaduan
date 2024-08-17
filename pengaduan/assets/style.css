@@ -1,0 +1,112 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.btn {
+  border-radius: 0;
+  padding: 10px 20px;
+}
+
+
+#bg-home {
+  width: 100%;
+  height: 50vh;
+  padding-top: 10vh;
+}
+
+.text-brand {
+  color: #5777ba !important;
+}
+
+.btn-brand {
+  background-color: #5777ba;
+  color: #fff;
+}
+
+.btn-outline-brand {
+  background-color: transparent;
+  color: #5777ba;
+  border: 1px solid #5777ba;
+}
+
+.btn-outline-brand:hover {
+  background-color: #5777ba;
+  color: #fff;
+}
+
+.btn-outline-brand:focus {
+  background-color: #5777ba;
+  color: #fff;
+}
+
+.btn-outline-brand:active {
+  background-color: #5777ba;
+  color: #fff;
+}
+
+.btn-outline-brand:active:focus {
+  background-color: #5777ba;
+  color: #fff;
+}
+
+.btn-brand:hover {
+  background-color: #4b63a2;
+  color: #fff;
+}
+
+
+
+.btn-brand:hover {
+  background-color: #4b63a2;
+  color: #fff;
+}
+
+.bs-wizard-step .bs-wizard-stepnum {
+  color: #595959;
+  font-size: 16px;
+}
+
+.bg-brand {
+  background-color: #5777ba;
+}
+
+.bs-wizard-dot {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #595959;
+  border-radius: 50%;
+}
+
+.btn-brand:focus {
+  background-color: #4b63a2;
+  color: #fff;
+}
+
+.btn-brand:active {
+  background-color: #4b63a2;
+  color: #fff;
+}
+
+.btn-brand:active:focus {
+  background-color: #4b63a2;
+  color: #fff;
+}
+
+.form-control:focus{
+  box-shadow: none;
+  border: 1px solid #ccc;
+}
+
+.form-control {
+  border-radius: 0;
+  border: 1px solid #ccc;
+  --webkit-box-shadow: none;
+  box-shadow: none;
+  /* disable outline shadow blue */
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
