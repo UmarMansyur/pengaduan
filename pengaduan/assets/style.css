@@ -1,5 +1,9 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f8f9fa;
 }
 
 .bg-transparent {
@@ -7,8 +11,130 @@ body {
 }
 
 .btn {
-  border-radius: 0;
   padding: 10px 20px;
+}
+
+.fs-24 {
+  font-size: 24px !important;
+}
+
+.fs-18 {
+  font-size: 18px !important;
+}
+
+.fs-14 {
+  font-size: 14px !important;
+}
+
+.bs-wizard-step {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.accordion {
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border: none !important;
+}
+
+.accordion-item {
+  border: none; 
+  margin-bottom: 10px;
+}
+
+.accordion-header {
+  background-color: white;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  text-align: left;
+}
+
+
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-button {
+  background-color: white;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  text-align: left;
+}
+
+.accordion-button:focus {
+  background-color: white;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  text-align: left;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+}
+
+.accordion-body {
+  background-color: white;
+  color: #333;
+  font-size: 14px;
+  border: none;
+  text-align: left;
+}
+
+/* jika tidak collapsed */
+
+.accordion-button:not(.collapsed) {
+  background-color: white;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  text-align: left;
+}
+
+
+
+
+@media screen and (min-width: 1024px) {
+  .bs-wizard-step {
+    padding-bottom: 20px;
+  }
+  .bs-wizard-step:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    top: 25px; /* Align with the middle of the step icon */
+    left: -50%; /* Position it to connect the previous step */
+    width: 100%; /* Full width to cover the gap */
+    height: 2px;
+    background-color: #ddd; /* Color of the connecting line */
+    z-index: 0;
+  }
+  
+  .bs-wizard-step .bg-brand {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .bs-wizard-step.active:not(:first-child)::before {
+    background-color: #3498db; /* Change color for active steps */
+  }
+  
+}
+
+.gap-50 {
+  margin-top: 50px;
+}
+
+.fs-28 {
+  font-size: 28px !important;
+}
+
+.fs-36 {
+  font-size: 36px !important;
 }
 
 
@@ -16,6 +142,39 @@ body {
   width: 100%;
   height: 50vh;
   padding-top: 10vh;
+}
+
+#bg-laporan {
+  background-image: url(../assets/img/home-map.png);
+}
+
+section {
+  width: 100%;
+}
+
+body, html {
+  height: 100% !important;
+  margin: 0;
+}
+
+
+.fs-12 {
+  font-size: 12px !important;
+}
+
+footer {
+  width: 100%;
+  margin-bottom: 0;
+  display: flex !important;
+  position: relative;
+}
+
+.bg-danger {
+  background-color: #EB5757!important;
+}
+
+.fs-48 {
+  font-size: 48px !important;
 }
 
 .text-brand {
@@ -102,11 +261,17 @@ body {
 }
 
 .form-control {
-  border-radius: 0;
+  border-radius: 4px;
   border: 1px solid #ccc;
-  --webkit-box-shadow: none;
+  background-color: white !important;
   box-shadow: none;
-  /* disable outline shadow blue */
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
+  padding: 10px 15px;
 }
+
+/* placehodler form-control */
+.form-control::placeholder {
+  color: #ccc;
+}
+

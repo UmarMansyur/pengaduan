@@ -7,65 +7,365 @@
   <title>Bootstrap demo</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/style.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg py-3 bg-transparent fixed-top">
-    <div class="container">
-      <div class="d-flex align-items-center w-100">
-        <a class="navbar-brand d-flex flex-row align-items-center" href="#">
-          <img src="./assets/img/logo.png" alt="logo" class="logo" width="50">
-          <span class="ms-2">E-Lapor</span>
-        </a>
-        <div>
-          <a href="" class="text-decoration-none text-dark ms-5">
-            TENTANG LAPOR!
+  <div class="d-flex flex-column justify-content-between align-items-center w-100" style="min-height: 100vh;">
+    <nav class="navbar navbar-expand-lg py-3 bg-white fixed-top shadow-sm">
+      <div class="container">
+        <div class="d-flex align-items-center w-100">
+          <a class="navbar-brand d-flex flex-row align-items-center" href="#">
+            <img src="./assets/img/logo.png" alt="logo" class="logo" width="50">
+            <span class="ms-2">E-Lapor</span>
           </a>
-        </div>
-        <div class="ms-auto">
-          <button class="btn btn-brand rounded-1 px-4 text-uppercase">Login</button>
-          <button class="btn btn-outline-brand ms-3 rounded-1 px-4 text-uppercase">Daftar</button>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <section id="bg-home">
-    <div class="container">
-      <div class="row justify-content-between align-items-center">
-        <div class="col-md-6 d-flex flex-column justify-content-between">
-          <h1 class="fw-bold text-brand text-uppercase display-5 mb-3">Layanan Pengaduan Masyarakat</h1>
-          <p style="font-size: 1.2rem;" class="text-muted mb-3">
-            Keluhan anda merupakan upaya penting dalam membangun kota yang lebih baik. Laporkan keluhan anda sekarang
-            dan kami akan segera menanganinya.
-          </p>
           <div>
-            <button class="btn btn-lg p-3 btn-brand rounded-1 px-4 text-uppercase rounded-pill">Laporkan Sekarang</button>
+            <a href="" class="text-decoration-none text-muted ms-5">
+              Beranda
+            </a>
+            <a href="" class="text-decoration-none text-muted ms-5">
+              Tentang Lapor
+            </a>
+            <a href="" class="text-decoration-none text-muted ms-5">
+              Dinas Pendidikan
+            </a>
+          </div>
+          <div class="ms-auto">
+            <button class="btn btn-brand px-4 text-uppercase">Login</button>
+            <button class="btn btn-outline-brand ms-3 px-4 text-uppercase">Daftar</button>
           </div>
         </div>
-        <div class="col-md-6 text-end">
-          <img src="./assets/img/image.png" alt="report" class="img-fluid">
-        </div>
       </div>
-    </div>
+    </nav>
+    <main class="flex-grow-1 w-100">
+      <section id="bg-home">
+        <div class="container">
+          <div class="row justify-content-between align-items-center pt-3">
+            <div class="col-md-6 justify-content-between">
+              <h1 class="fw-bold text-brand text-uppercase display-5 mb-3">Layanan Pengaduan Masyarakat</h1>
+              <p style="font-size: 1.2rem;" class="text-muted mb-3">
+                Keluhan anda merupakan upaya penting dalam membangun kota yang lebih baik. Laporkan keluhan anda
+                sekarang
+                dan kami akan segera menanganinya.
+              </p>
+              <div class="d-flex align-items-center my-3">
+                <button class="btn btn-lg p-3 btn-brand px-4 text-uppercase rounded-pill">Laporkan Sekarang</button>
+              </div>
+            </div>
+            <div class="col-md-6 text-end">
+              <img src="./assets/img/image.png" alt="report" class="img-fluid">
+            </div>
+          </div>
+        </div>
 
-  </section>
-  <section class="bg-warning mt-5">
-    <div class="container">
-      <div class="d-flex">
-        <div class="bg-brand text-white rounded-circle">
-          
+      </section>
+      <section>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="card shadow-sm">
+                <div class="card-body">
+                  adsf
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-5">
+        <div class="container my-0 pt-3">
+          <h2 class="text-center mb-5 text-uppercase fw-bold text-brand">
+            Proses Pengaduan  
+          </h2>
+          <div class="row justify-content-center mb-0">
+            <div class="col-md-2 bs-wizard-step">
+              <span class="bg-brand align-items-center d-flex justify-content-center mx-auto"
+                style="width: 50px; height: 50px; border-radius: 50%;">
+                <i class="bx bx-edit text-white fs-24"></i>
+              </span>
+              <h6 class="text-dark mb-0 fw-bold my-3 text-center">Tulis Laporan</h6>
+              <p class="text-muted mt-3 text-center fs-14 mb-0">Tulis laporan keluhan anda dengan jelas dan lengkap</p>
+            </div>
+            <div class="col-md-2 bs-wizard-step">
+              <span class="bg-brand align-items-center d-flex justify-content-center mx-auto"
+                style="width: 50px; height: 50px; border-radius: 50%;">
+                <i class="bx bx-share text-white fs-24"></i>
+              </span>
+              <h6 class="text-dark mb-0 fw-bold my-3 text-center">Proses Verifikasi</h6>
+              <p class="text-muted mt-3 text-center fs-14 mb-0">Laporan anda akan diverifikasi oleh pihak terkait dalam
+                waktu 3x24 jam</p>
+            </div>
+            <div class="col-md-2 bs-wizard-step">
+              <span class="bg-brand align-items-center d-flex justify-content-center mx-auto"
+                style="width: 50px; height: 50px; border-radius: 50%;">
+                <i class="bx bx-chat text-white fs-24"></i>
+              </span>
+              <h6 class="text-dark mb-0 fw-bold my-3 text-center">Proses Tindak Lanjut</h6>
+              <p class="text-muted mt-3 text-center fs-14 mb-0">Dalam waktu 5x24 jam laporan anda akan ditindak lanjuti
+              </p>
+            </div>
+            <div class="col-md-2 bs-wizard-step">
+              <span class="bg-brand align-items-center d-flex justify-content-center mx-auto"
+                style="width: 50px; height: 50px; border-radius: 50%;">
+                <i class="bx bx-conversation text-white fs-24"></i>
+              </span>
+              <h6 class="text-dark mb-0 fw-bold my-3 text-center">Beri Tanggapan</h6>
+              <p class="text-muted mt-3 text-center fs-14 mb-0">Anda dapat melihat tanggapan dari instansi terkait</p>
+            </div>
+            <div class="col-md-2 bs-wizard-step">
+              <span class="bg-brand align-items-center d-flex justify-content-center mx-auto"
+                style="width: 50px; height: 50px; border-radius: 50%;">
+                <i class="bx bx-check-double text-white fs-24"></i>
+              </span>
+              <h6 class="text-dark mb-0 fw-bold my-3 text-center">Selesai</h6>
+              <p class="text-muted mt-3 text-center fs-14 mb-0">Laporan anda telah selesai ditangani</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 text-center mt-3">
+              <button class="btn btn-outline-brand px-4 rounded-1">
+                Pelajari Lebih Lanjut
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bg-brand text-white py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h3 class="text-center fs-48 text-uppercase mb-3">
+                Jumlah Laporan Sekarang
+              </h3>
+              <h1 class="text-center display-3 fw-bold text-uppercase">
+                1000
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row my-3">
+            <div class="col-12">
+              <h3 class="text-center text-muted fs-28 fw-bold text-uppercase my-4">
+                Kategori Laporan
+              </h3>
+            </div>
+          </div>
+          <div class="row my-3">
+            <div class="col-md-3">
+              <h3 class="text-center fs-24 fw-bold text-uppercase mb-3">
+                SOP Laporan
+              </h3>
+              <h1 class="text-center fs-28 fw-bold text-uppercase">
+                1000
+              </h1>
+            </div>
+            <div class="col-md-3">
+              <h3 class="text-center fs-24 fw-bold text-uppercase mb-3">
+                SOP Laporan
+              </h3>
+              <h1 class="text-center fs-28 fw-bold text-uppercase">
+                1000
+              </h1>
+            </div>
+            <div class="col-md-3">
+              <h3 class="text-center fs-24 fw-bold text-uppercase mb-3">
+                SOP Laporan
+              </h3>
+              <h1 class="text-center fs-28 fw-bold text-uppercase">
+                1000
+              </h1>
+            </div>
+            <div class="col-md-3">
+              <h3 class="text-center fs-24 fw-bold text-uppercase mb-3">
+                SOP Laporan
+              </h3>
+              <h1 class="text-center fs-28 fw-bold text-uppercase">
+                1000
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container" id="saran">
+          <form action="" method="post">
+            <div class="container">
+              <div class="row">
+                <div class="row">
+                  <div class="col-lg-6 py-5 my-auto">
+                    <h1 class="fw-bold">Kritik Dan Saran</h1>
+                  </div>
+                  <div class="col-lg-6 py-5 p-lg-6">
+                    <div class="col-12 mb-3">
+                      <label for="nama" class="form-label">Nama</label>
+                      <input type="text" class="form-control" name="nama" placeholder="Nama Anda">
+                    </div>
+                    <div class="col-12 mb-3">
+                      <label for="inputEmail4" class="form-label">E-Mail</label>
+                      <input type="email" class="form-control" name="email" placeholder="Masukkan Email">
+                    </div>
+                    <div class="col-12 mb-3">
+                      <label for="alamatLengkap" class="form-label ">Sampaikan Saran &amp; Kritik Anda</label>
+                      <textarea class="form-control" name="alamat" rows="5"
+                        placeholder="Masukkan Alamat Lengkap"></textarea>
+                    </div>
+                    <div class="d-grid gap-2 mb-3 pb-5">
+                      <button class="btn btn-brand" name="save" type="submit">KIRIM</button>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="bg-light py-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-10">
+              <h3 class="text-center text-brand fs-28 fw-bold text-uppercase my-4">
+                FAQ
+              </h3>
+              <div class="accordion mt-5" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Bagaimana saya bisa memantau status pengaduan saya?
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      Setelah pengaduan diajukan, pengguna dapat memantau status pengaduan mereka melalui dashboard pengaduan di akun mereka. Setiap perubahan status akan diberitahukan melalui email atau notifikasi di platform
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Apakah pengaduan saya akan ditanggapi?
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      Ya, setiap pengaduan yang diajukan akan diperiksa oleh tim kami. Pengguna akan menerima notifikasi tentang status pengaduan mereka dan akan mendapatkan tanggapan resmi setelah pengaduan diproses.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Bisakah saya menarik atau mengubah pengaduan setelah diajukan?
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      Pengaduan tidak dapat diubah, namun pengguna dapat menarik pengaduan mereka sebelum diproses oleh tim kami. Setelah pengaduan diproses, pengguna tidak dapat menarik pengaduan mereka.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Apakah pengaduan saya bersifat rahasia?
+                    </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      Ya, semua pengaduan yang diajukan bersifat rahasia. Kami memastikan bahwa informasi pengguna dan isi pengaduan dilindungi sesuai dengan kebijakan privasi kami.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Bagaimana jika pengaduan saya tidak mendapatkan solusi yang memuaskan?
+                    </button>
+                  </h2>
+                  <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                     Jika anda merasa bahwa pengaduan anda tidak ditanggapi dengan baik, anda dapat menghubungi kami melalui email atau telepon yang tertera di website ini. Kami akan segera menindaklanjuti pengaduan anda.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-light flex-shrink-0 w-100 py-5 text-dark">
+      <div class="container">
+        <div class="row flex justify-content-between">
+          <div class="col-md-4 d-flex align-items-center">
+            <img src="./assets/img/logo.png" alt="logo" class="" width="100">
+            <div>
+              <h6 class="fw-bold">Dinas Pendidikan Kabupaten Pamekasan</h6>
+              <p class=" text-muted mb-0 fs-12">
+                Jl. Raya Proppo, Pamekasan
+              </p>
+              <p class=" text-muted mb-0 fs-12">
+                Telp. -
+              </p>
+              <p class=" text-muted mb-0 fs-12">
+                Email: dispendik.pmk@gmail.com
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-start">
+              <h6 class="fw-bold">Tautan Lainnya</h6>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="" class="text-decoration-none text-dark fs-12">
+                    <i class="bx bx-chevron-right"></i> Website Dinas Pendidikan Kabupaten Pamekasan
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="text-decoration-none text-dark fs-12">
+                    <i class="bx bx-chevron-right"></i> Website Pemerintah Kabupaten Pamekasan
+                  </a>
+                </li>
+              </ul>
+            
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="">
+              <h6 class="fw-bold">Akun Media Sosial</h6>
+              <ul class="list-unstyled d-flex">
+                <li>
+                  <a href="https://www.facebook.com/profile.php?id=100076864329057" class="text-decoration-none text-dark fs-18 mx-1">
+                    <i class="bx bxl-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://instagram.com/dispendikpamekasan" class="text-decoration-none text-dark fs-18 mx-1">
+                    <i class="bx bxl-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <!-- gmail -->
+                  <a href="mailto:dispendik.pmk@gmail.com" class="text-decoration-none text-dark fs-18 mx-1">
+                    <i class="bx bx-envelope"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </footer>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"></script>
