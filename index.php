@@ -31,6 +31,8 @@ session_start();
     <?php
     include './views/layouts/Header.php';
     $menu = 'home';
+    include './generatePassword.php';
+
     if (isset($_GET['page']) == "") {
       include './views/home.php';
     } else if (isset($_GET['page']) && $_GET['page'] == 'lapor') {

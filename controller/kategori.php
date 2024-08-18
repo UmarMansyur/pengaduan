@@ -34,7 +34,7 @@ if ($action == 'read') {
   ]);
 } elseif ($action == 'save') {
   $id = isset($_POST['id']) ? $_POST['id'] : '';
-  $nama = $_POST['nama'];
+  $nama = mysqli_real_escape_string($conn, $nama);
 
   if ($id) {
     // Update

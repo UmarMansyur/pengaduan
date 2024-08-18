@@ -55,7 +55,7 @@ CREATE TABLE kuisioner (
     nama VARCHAR(255) NOT NULL,
     jumlah_soal INTEGER NOT NULL,
     jumlah_jawaban INTEGER NOT NULL,
-    status ENUM('Aktif', 'Tidak Aktif') NOT NULL
+    status BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE soal (
