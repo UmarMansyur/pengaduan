@@ -4,7 +4,7 @@
       <div class="col-md-4 d-flex align-items-center">
         <img src="./views/assets/img/logo.png" alt="logo" class="" width="100">
         <div>
-          <h6 class="fw-bold">Dinas Pendidikan Kabupaten Pamekasan</h6>
+          <h6 class="fw-bold">Dinas Pendidikan & Kebudayaan Kabupaten Pamekasan</h6>
           <p class=" text-muted mb-0 fs-12">
             Jl. Raya Proppo, Pamekasan
           </p>

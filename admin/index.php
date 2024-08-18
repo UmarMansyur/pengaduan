@@ -62,6 +62,12 @@ if (!isset($_SESSION['user'])) {
                             case 'kuisioner':
                                 include 'kuisioner.php';
                                 break;
+                            case 'statistik-kuisioner':
+                                include 'statistik-kuisioner.php';
+                                break;
+                            case 'statistik-pengaduan':
+                                include 'statistik-pengaduan.php';
+                                break;
                             case 'pending':
                                 include 'pengaduan.php';
                                 break;
@@ -106,8 +112,7 @@ if (!isset($_SESSION['user'])) {
     <script src="/pengaduan/admin/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="/pengaduan/admin/assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
     <script src="/pengaduan/admin/assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-    <script src="/pengaduan/admin/assets/libs/morris.js/morris.min.js"></script>
-    <script src="/pengaduan/admin/assets/libs/raphael/raphael.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <!-- Plugin Js-->
     <!-- <script src="/pengaduan/admin/assets/js/pages/dashboard.init.js"></script> -->
     <!-- Data Table -->

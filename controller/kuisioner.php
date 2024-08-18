@@ -56,7 +56,8 @@ if ($action == 'read') {
   } else {
     // Insert
     $stmt = $conn->prepare("INSERT INTO kuisioner (nama, jumlah_soal, jumlah_jawaban, status) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param('siii', $nama, $jumlah_soal, $jumlah_jawaban, $status);
+    $stmt->bind_param('siib', $nama, $jumlah_soal, $jumlah_jawaban, $status);
+    $status = false;
   }
 
   if ($stmt->execute()) {

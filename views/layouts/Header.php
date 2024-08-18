@@ -4,8 +4,8 @@
       <a class="navbar-brand d-flex flex-row align-items-center" href="/pengaduan/index.php">
         <img src="./views/assets/img/logo.png" alt="logo" class="logo" width="50">
         <div class="d-flex flex-column">
-          <h5 class="fw-bold mb-0">Dinas Pendidikan</h5>
-          <h6 class="mb-0">Kabupaten Pamekasan</h6>
+          <h5 class="fw-bold mb-0" style="font-size: 12px;">Dinas Pendidikan & Kebudayaan</h5>
+          <h6 class="mb-0" style="font-size: 12px;">Kabupaten Pamekasan</h6>
         </div>
 
       </a>
@@ -21,6 +21,9 @@
         </a>
         <a href="?page=about-us" class="text-decoration-none text-muted ms-5 <?= isset($_GET['page']) && $_GET['page'] == 'about-us' ? 'active' : '' ?>">
           Tentang Lapor
+        </a>
+        <a href="?page=ikm" class="text-decoration-none text-muted ms-5 <?= isset($_GET['page']) && $_GET['page'] == 'ikm' ? 'active' : '' ?>">
+          Index Kepuasan Masyarakat
         </a>
       </div>
       <div class="d-flex align-items-center ms-auto">

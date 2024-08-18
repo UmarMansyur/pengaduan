@@ -99,42 +99,14 @@ if (empty($isDetail)):
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
             <i class="bx bx-x"></i> Batal
           </button>
-          <button type="button" class="btn btn-primary" onclick="submitKuisioner()">
+          <button type="button" class="btn btn-primary" onclick="submitKuisioner()" data-bs-dismiss="modal">
             <i class="bx bx-save"></i> Simpan
           </button>
         </div>
       </div>
     </div>
   </div>
-
-<?php else: ?>
-  <?php
-  include './detailKuisioner.php';
-  ?>
-
   <script>
-    function submitSoalKuisioner() {
-      const formData = $('#kuisionerForm').serialize();
-      $.ajax({
-        url: '/pengaduan/controller/kuisioner.php?action=saveSoal&id=<?= $id ?>',
-        type: 'POST',
-        data: formData,
-        success: function(response) {
-          if (response.status === 'success') {
-            alert(response.message);
-            window.location.href = '/pengaduan/admin?page=kuisioner';
-          } else {
-            alert(response.message);
-          }
-        }
-      });
-    }
-  </script>
-
-<?php endif; ?>
-
-
-<script>
   // Fungsi untuk memuat kategori
   var dataTable;
 
@@ -152,7 +124,7 @@ if (empty($isDetail)):
         (async () => {
           dataTable = $('#dataTable').DataTable({
             "language": {
-              "url": "//cdn.datatables.net/plug-ins/1.10.25/i18n/Indonesian.json"
+              "url": "https://cdn.datatables.net/plug-ins/1.10.25/i18n/Indonesian.json"
             }
           });
         })();
@@ -229,3 +201,31 @@ if (empty($isDetail)):
     });
   }
 </script>
+
+<?php else: ?>
+  <?php
+  include './detailKuisioner.php';
+  ?>
+
+  <script>
+    function submitSoalKuisioner() {
+      const formData = $('#kuisionerForm').serialize();
+      $.ajax({
+        url: '/pengaduan/controller/kuisioner.php?action=saveSoal&id=<?= $id ?>',
+        type: 'POST',
+        data: formData,
+        success: function(response) {
+          if (response.status === 'success') {
+            alert(response.message);
+            window.location.href = '/pengaduan/admin?page=kuisioner';
+          } else {
+            alert(response.message);
+          }
+        }
+      });
+    }
+  </script>
+
+<?php endif; ?>
+
+

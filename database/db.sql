@@ -75,7 +75,8 @@ CREATE TABLE jawaban (
 
 CREATE TABLE jawaban_pengguna (
     id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    nama BIGINT NOT NULL,
+    nama VARCHAR(255) NOT NULL,
+    usia INTEGER NOT NULL,
     kuisioner_id BIGINT NOT NULL,
     jenis_kelamin ENUM('L', 'P') NOT NULL,
     pendidikan ENUM('SD', 'SMP', 'SMA', 'D3', 'S1', 'S2', 'S3') NOT NULL,
@@ -125,10 +126,86 @@ INSERT INTO kategori_layanan (nama) VALUES
 ('Pelayanan Lainnya');
 
 
-
-
-
 INSERT INTO pengguna (nama_lengkap, email, username, password, type, thumbnail) VALUES 
 ('Admin', 'admin@gmail.com', 'admin', '$2y$10$uoS.DRftiBx.4N0.yVurHesGv8h6JY4eE.0xFr0qvKd3U4lR1U9lC', 'admin', 'https://ik.imagekit.io/8zmr0xxik/blob_c2rRi4vdU?updatedAt=1709077347010');
 
 INSERT INTO tentang_kami (deskripsi) VALUES ('Tentang Kami');
+
+INSERT INTO kuisioner (nama, jumlah_soal, jumlah_jawaban, status) VALUES ('Kuisioner Kepuasan Layanan Publik', 9, 4, TRUE);
+
+
+INSERT INTO soal (kuisioner_id, soal) VALUES
+(1, 'Bagaimana pendapat anda tentang kesesuaian persyaratan pelayanan dengan jenis pelayanan yang diberikan?'),
+(1, 'Bagaimana pemahaman anda tentang kemudahan prosedur pelayanan di unit ini?'),
+(1, 'Bagaimana pendapat anda tentang kecepatan waktu dalam memberikan pelayanan?'),
+(1, 'Bagaimana pendapat anda tentang kewajaran biaya?'),
+(1, 'Bagaimana pendapat anda tentang kesesuaian produk pelayanan antara yang tercantum dalam standar pelayanan dengan hasil yang diberikan?'),
+(1, 'Bagaimana pendapat anda tentang kompetensi/ kemampuan petugas dalam pelayanan (improvisasi)?'),
+(1, 'Bagaimana pendapat anda tentang perilaku petugas dalam pelayanan terkait kesopanan dan keramahan?'),
+(1, 'Bagaimana pendapat anda tentang kualitas sarana dan prasarana?'),
+(1, 'Bagaimana pendapat anda tentang penanganan pengaduan pelayanan?');
+
+
+-- Jawaban untuk soal 1
+INSERT INTO jawaban (soal_id, jawaban, bobot) VALUES
+(1, 'Tidak Sesuai', 1),
+(1, 'Kurang Sesuai', 2),
+(1, 'Sesuai', 3),
+(1, 'Sangat Sesuai', 4);
+
+-- Jawaban untuk soal 2
+INSERT INTO jawaban (soal_id, jawaban, bobot) VALUES
+(2, 'Tidak Mudah', 1),
+(2, 'Kurang Mudah', 2),
+(2, 'Mudah', 3),
+(2, 'Sangat Mudah', 4);
+
+-- Jawaban untuk soal 3
+INSERT INTO jawaban (soal_id, jawaban, bobot) VALUES
+(3, 'Tidak Cepat', 1),
+(3, 'Kurang Cepat', 2),
+(3, 'Cepat', 3),
+(3, 'Sangat Cepat', 4);
+
+-- Jawaban untuk soal 4
+INSERT INTO jawaban (soal_id, jawaban, bobot) VALUES
+(4, 'Sangat Mahal', 1),
+(4, 'Cukup Mahal', 2),
+(4, 'Murah', 3),
+(4, 'Gratis', 4);
+
+-- Jawaban untuk soal 5
+INSERT INTO jawaban (soal_id, jawaban, bobot) VALUES
+(5, 'Tidak sesuai', 1),
+(5, 'Kurang sesuai', 2),
+(5, 'Sesuai', 3),
+(5, 'Sangat sesuai', 4);
+
+-- Jawaban untuk soal 6
+INSERT INTO jawaban (soal_id, jawaban, bobot) VALUES
+(6, 'Tidak Kompeten', 1),
+(6, 'Kurang Kompeten', 2),
+(6, 'Kompeten', 3),
+(6, 'Sangat Kompeten', 4);
+
+-- Jawaban untuk soal 7
+INSERT INTO jawaban (soal_id, jawaban, bobot) VALUES
+(7, 'Tidak sopan & ramah', 1),
+(7, 'Kurang sopan & ramah', 2),
+(7, 'sopan & ramah', 3),
+(7, 'Sangat sopan & ramah', 4);
+
+-- Jawaban untuk soal 8
+INSERT INTO jawaban (soal_id, jawaban, bobot) VALUES
+(8, 'Buruk', 1),
+(8, 'Cukup', 2),
+(8, 'Baik', 3),
+(8, 'Sangat Baik', 4);
+
+-- Jawaban untuk soal 9
+INSERT INTO jawaban (soal_id, jawaban, bobot) VALUES
+(9, 'Tidak Ada', 1),
+(9, 'Ada tapi tidak berfungsi', 2),
+(9, 'Berfungsi Kurang maksimal', 3),
+(9, 'Dikelola dengan baik', 4);
+

@@ -11,8 +11,8 @@
             <div class="d-flex align-items-center mt-2">
               <img src="/pengaduan/views/assets/img/logo.png" alt="" height="44">
               <div class="text-start">
-                <h5 class="text-white mb-0 font-size-12 text-uppercase">Dinas Pendidikan</h5>
-                <h5 class="text-white mb-0 font-size-12 text-uppercase">Kabupaten Pamekasan</h5>
+                <h6 class="text-white mb-0 text-uppercase" style="font-size: 10px;">Dinas Pendidikan  & Kebudayaan</h6>
+                <h5 class="text-white mb-0 text-uppercase" style="font-size: 10px;">Kabupaten Pamekasan</h5>
               </div>
             </div>
           </span>

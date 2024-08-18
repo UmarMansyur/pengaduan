@@ -40,19 +40,19 @@
             </li>
           </ul>
         </li>
-        <li>
+        <li class="<?= @($_GET['page']) == 'statistik-pengaduan' ? 'mm-active' : ''; ?>">
           <a href="/pengaduan/admin?page=statistik-pengaduan" class="waves-effect">
             <i class="ti-pie-chart"></i>
             <span>Statistik Pengaduan</span>
           </a>
         </li>
-        <li>
+        <li class="<?= @($_GET['page']) == 'kuisioner' ? 'mm-active' : ''; ?>">
           <a href="/pengaduan/admin?page=kuisioner" class="waves-effect">
             <i class="ti-stats-up"></i>
             <span>Kuisioner</span>
           </a>
         </li>
-        <li>
+        <li class="<?= @($_GET['page']) == 'statistik-kuisioner' ? 'mm-active' : ''; ?>">
           <a href="/pengaduan/admin?page=statistik-kuisioner" class="waves-effect">
             <i class="ti-bar-chart"></i>
             <span>Statistik Kuisioner</span>

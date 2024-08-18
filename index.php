@@ -31,7 +31,6 @@ session_start();
     <?php
     include './views/layouts/Header.php';
     $menu = 'home';
-    include './generatePassword.php';
 
     if (isset($_GET['page']) == "") {
       include './views/home.php';
@@ -41,6 +40,8 @@ session_start();
       include './views/monitoring.php';
     } else if (isset($_GET['page']) && $_GET['page'] == 'about-us') {
       include './views/tentang-lapor.php';
+    } else if (isset($_GET['page']) && $_GET['page'] == 'ikm') {
+      include './views/ikm.php';
     } else if (isset($_GET['page']) && $_GET['page'] == 'detail-monitoring') {
       if (isset($_GET['id'])) {
         include './views/detail-monitoring.php';
