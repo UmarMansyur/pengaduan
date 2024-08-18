@@ -42,7 +42,7 @@ CREATE TABLE pengaduan (
     tanggal_dibuat DATETIME DEFAULT CURRENT_TIMESTAMP,
     tanggal_diproses DATETIME NULL,
     tanggal_selesai DATETIME NULL,
-    CONSTRAINT fk_kategori_pengaduan FOREIGN KEY (kategori_layanan_id) REFERENCES kategori_layanan(id)
+    CONSTRAINT fk_kategori_pengaduan FOREIGN KEY (kategori_layanan_id) REFERENCES kategori_layanan(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE kuisioner (
@@ -55,7 +55,7 @@ CREATE TABLE soal (
     id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     kuisioner_id INTEGER NOT NULL,
     soal VARCHAR(255) NOT NULL,
-    CONSTRAINT fk_kuisioner_soal FOREIGN KEY (kuisioner_id) REFERENCES kuisioner(id)
+    CONSTRAINT fk_kuisioner_soal FOREIGN KEY (kuisioner_id) REFERENCES kuisioner(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE jawaban (
@@ -63,10 +63,8 @@ CREATE TABLE jawaban (
     soal_id BIGINT NOT NULL,
     jawaban VARCHAR(255) NOT NULL,
     bobot INTEGER NOT NULL,
-    CONSTRAINT fk_kuisioner_jawaban FOREIGN KEY (soal_id) REFERENCES soal(id)
+    CONSTRAINT fk_kuisioner_jawaban FOREIGN KEY (soal_id) REFERENCES soal(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
-
 
 CREATE TABLE jawaban_pengguna (
     id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
@@ -82,8 +80,8 @@ CREATE TABLE detail_jawaban_pengguna (
     jawaban_pengguna_id BIGINT NOT NULL,
     soal_id BIGINT NOT NULL,
     jawaban_id BIGINT NOT NULL,
-    CONSTRAINT fk_jawaban_pengguna_detail_jawaban_pengguna FOREIGN KEY (jawaban_pengguna_id) REFERENCES jawaban_pengguna(id),
-    CONSTRAINT fk_soal_detail_jawaban_pengguna FOREIGN KEY (soal_id) REFERENCES soal(id)
+    CONSTRAINT fk_jawaban_pengguna_detail_jawaban_pengguna FOREIGN KEY (jawaban_pengguna_id) REFERENCES jawaban_pengguna(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT fk_soal_detail_jawaban_pengguna FOREIGN KEY (soal_id) REFERENCES soal(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE file_lampiran (
@@ -91,10 +89,19 @@ CREATE TABLE file_lampiran (
     pengaduan_id BIGINT NOT NULL,
     nama VARCHAR(255) NOT NULL,
     path VARCHAR(255) NOT NULL,
-    CONSTRAINT fk_pengaduan_file_lampiran FOREIGN KEY (pengaduan_id) REFERENCES pengaduan(id)
+    CONSTRAINT fk_pengaduan_file_lampiran FOREIGN KEY (pengaduan_id) REFERENCES pengaduan(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-INSERT INTO kategori_layanan (nama) VALUES ('Pelayanan Publik'), ('Pelayanan Kesehatan'), ('Pelayanan Pendidikan'), ('Pelayanan Keamanan'), ('Pelayanan Sosial'), ('Pelayanan Transportasi'), ('Pelayanan Pariwisata'), ('Pelayanan Perizinan'), ('Pelayanan Lainnya');
+INSERT INTO kategori_layanan (nama) VALUES 
+('Pelayanan Publik'), 
+('Pelayanan Kesehatan'), 
+('Pelayanan Pendidikan'), 
+('Pelayanan Keamanan'), 
+('Pelayanan Sosial'), 
+('Pelayanan Transportasi'), 
+('Pelayanan Pariwisata'), 
+('Pelayanan Perizinan'), 
+('Pelayanan Lainnya');
 
-
-INSERT INTO pengguna (nama_lengkap, email, username, password, type, thumbnail) VALUES ('Admin', 'admin@gmail.com', 'admin', '$2y$10$uoS.DRftiBx.4N0.yVurHesGv8h6JY4eE.0xFr0qvKd3U4lR1U9lC', 'admin', 'https://ik.imagekit.io/8zmr0xxik/blob_c2rRi4vdU?updatedAt=1709077347010');
+INSERT INTO pengguna (nama_lengkap, email, username, password, type, thumbnail) VALUES 
+('Admin', 'admin@gmail.com', 'admin', '$2y$10$uoS.DRftiBx.4N0.yVurHesGv8h6JY4eE.0xFr0qvKd3U4lR1U9lC', 'admin', 'https://ik.imagekit.io/8zmr0xxik/blob_c2rRi4vdU?updatedAt=1709077347010');

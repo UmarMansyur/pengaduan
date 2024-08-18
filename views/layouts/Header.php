@@ -16,12 +16,26 @@
         <a href="?page=lapor" class="text-decoration-none text-muted ms-5 <?= isset($_GET['page']) && $_GET['page'] == 'lapor' ? 'active' : '' ?>">
           Lapor
         </a>
-        <a href="?page=monitoring" class="text-decoration-none text-muted ms-5">
+        <a href="?page=monitoring" class="text-decoration-none text-muted ms-5 <?= isset($_GET['page']) && $_GET['page'] == 'monitoring' ? 'active' : '' ?>">
           Monitoring Laporan
         </a>
         <a href="?page=about-us" class="text-decoration-none text-muted ms-5" <?= isset($_GET['page']) && $_GET['page'] == 'about-us' ? 'active' : '' ?>>
           Tentang Lapor
         </a>
+        <a href="" class="text-decoration-none text-muted ms-5">
+          Hubungi Kami
+        </a>
+      </div>
+      <div class="d-flex align-items-center ms-auto">
+        <?php if (isset($_SESSION['user'])) : ?>
+         <a href="/admin" class="btn px-3 py-2 btn-brand text-white">
+          Administrasi Situs
+        </a>
+        <?php else: ?>    
+        <button type="button" class="btn px-3 py-2 btn-brand text-white" data-bs-toggle="modal" data-bs-target="#login-modal">
+          <i class="bx bx-user align-middle"></i> <span class="align-middle">Login</span>
+        </button>
+        <?php endif; ?>
       </div>
     </div>
   </div>

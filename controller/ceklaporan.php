@@ -45,9 +45,9 @@ if (isset($_GET['q']) && !empty($_GET['q']) && $_GET['q'] !== '') {
     $id = $kode['id'];
 
     // Menggunakan prepared statement untuk menghindari SQL Injection
-    $sql = "SELECT * FROM pengaduan JOIN kategori_layanan ON pengaduan.kategori_layanan_id = kategori_layanan.id WHERE DATE(tanggal_dibuat) = ? AND pengaduan.id = ?";
-    // $sql2 = "SELECT * FROM file_lampiran WHERE file_lampiran.pengaduan_id = $id";
-    // $datas = $conn->query($sql2);
+    $sql = "SELECT *, kategori_layanan.nama as nama_kategori FROM pengaduan JOIN kategori_layanan ON pengaduan.kategori_layanan_id = kategori_layanan.id WHERE DATE(tanggal_dibuat) = ? AND pengaduan.id = ?";
+    $sql2 = "SELECT * FROM file_lampiran WHERE file_lampiran.pengaduan_id = $id";
+    $datas = $conn->query($sql2);
     $stmt = $conn->prepare($sql);
     if ($stmt === false) {
         echo json_encode([
@@ -63,7 +63,8 @@ if (isset($_GET['q']) && !empty($_GET['q']) && $_GET['q'] !== '') {
     if ($result->num_rows > 0) {
         $data = $result->fetch_assoc();
         echo json_encode([
-            'data' => $data
+            'data' => $data,
+            'lampiran' => $datas->fetch_all(MYSQLI_ASSOC)
         ]);
     } else {
         echo json_encode([
@@ -74,7 +75,7 @@ if (isset($_GET['q']) && !empty($_GET['q']) && $_GET['q'] !== '') {
     $stmt->close();
 } else {
      echo json_encode([
-        'error' => 'Parameter q tidak ada atau kosong'
+        'data' => []
     ]);
 }
 
