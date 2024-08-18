@@ -11,6 +11,8 @@ DROP TABLE IF EXISTS pengguna;
 
 DROP TABLE IF EXISTS tentang_kami;
 
+DROP TABLE IF EXISTS kritik_saran;
+
 CREATE TABLE pengguna (
     id BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nama_lengkap VARCHAR(255) NOT NULL,
@@ -51,6 +53,8 @@ CREATE TABLE pengaduan (
 CREATE TABLE kuisioner (
     id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nama VARCHAR(255) NOT NULL,
+    jumlah_soal INTEGER NOT NULL,
+    jumlah_jawaban INTEGER NOT NULL,
     status ENUM('Aktif', 'Tidak Aktif') NOT NULL
 );
 
@@ -100,6 +104,15 @@ CREATE TABLE tentang_kami (
     deskripsi TEXT NOT NULL
 );
 
+CREATE TABLE kritik_saran (
+    id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    email VARCHAR(100) NOT NULL,
+    nama VARCHAR(255) NOT NULL,
+    deskripsi TEXT NOT NULL,
+    dibaca BOOLEAN DEFAULT FALSE,
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
 INSERT INTO kategori_layanan (nama) VALUES 
 ('Pelayanan Publik'), 
 ('Pelayanan Kesehatan'), 
@@ -110,6 +123,9 @@ INSERT INTO kategori_layanan (nama) VALUES
 ('Pelayanan Pariwisata'), 
 ('Pelayanan Perizinan'), 
 ('Pelayanan Lainnya');
+
+
+
 
 
 INSERT INTO pengguna (nama_lengkap, email, username, password, type, thumbnail) VALUES 

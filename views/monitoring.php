@@ -19,7 +19,7 @@
                     <script>
                       async function check() {
                         const value = document.getElementById('kode_unik').value;
-                        const response = await fetch('./controller/ceklaporan.php?q=' + `${encodeURIComponent(value)}`);
+                        const response = await fetch('/pengaduan/controller/ceklaporan.php?q=' + `${encodeURIComponent(value)}`);
                         const data = await response.json();
                         if (data.error) {
                           document.getElementById('id-search').innerHTML = `
@@ -165,3 +165,7 @@
     </div>
   </section>
 </main>
+
+<script>
+  document.title = 'Monitoring Pengaduan | Dinas Pendidikan Kota Pamekasan';
+</script>

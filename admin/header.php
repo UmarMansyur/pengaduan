@@ -3,13 +3,13 @@
     <div class="d-flex">
       <!-- LOGO -->
       <div class="navbar-brand-box">
-        <a href="index.html" class="logo logo-light">
+        <a href="/pengaduan/admin/index.php" class="logo logo-light">
           <span class="logo-sm">
-            <img src="/views/assets/img/logo.png" alt="" height="25">
+            <img src="/pengaduan/views/assets/img/logo.png" alt="" height="25">
           </span>
           <span class="logo-lg">
             <div class="d-flex align-items-center mt-2">
-              <img src="/views/assets/img/logo.png" alt="" height="44">
+              <img src="/pengaduan/views/assets/img/logo.png" alt="" height="44">
               <div class="text-start">
                 <h5 class="text-white mb-0 font-size-12 text-uppercase">Dinas Pendidikan</h5>
                 <h5 class="text-white mb-0 font-size-12 text-uppercase">Kabupaten Pamekasan</h5>
@@ -33,14 +33,14 @@
           </span>
         </button>
         <div class="dropdown-menu dropdown-menu-end">
-          <a class="dropdown-item" href="/">
+          <a class="dropdown-item" href="/pengaduan/index.php">
             <i class="ti-home font-size-16 align-middle me-1 text-muted"></i>
             <span class="align-middle">Website Utama</span>
           </a>
         </div>
       </div>
       <div class="dropdown d-inline-block">
-        <button type="button" class="btn header-item noti-icon waves-effect" onclick="window.location.href = '/controller/logout.php'">
+        <button type="button" class="btn header-item noti-icon waves-effect" onclick="window.location.href = '/pengaduan/controller/logout.php'">
           <i class="mdi mdi-power"></i>
         </button>
       </div>

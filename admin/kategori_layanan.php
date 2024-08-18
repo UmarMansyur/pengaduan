@@ -3,7 +3,7 @@
     <h6 class="page-title">Kategori Tujuan Layanan</h6>
   </div>
   <div class="col-md-4 text-end">
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalKategori">
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalKategori" onclick="$('#kategoriId').val(''); $('#namaKategori').val(''); $('#modalKategoriLabel').text('Tambah Kategori')">
       <i class='bx bx-plus'></i> Tambah Kategori
     </button>
   </div>
@@ -63,7 +63,7 @@
   var dataTable;
    function loadKategori() {
     $.ajax({
-      url: '/controller/kategori.php?action=read',
+      url: '/pengaduan/controller/kategori.php?action=read',
       type: 'GET',
       success: function(data) {
         if (dataTable) {
@@ -88,7 +88,7 @@
     const formData = $('#kategoriForm').serialize();
 
     $.ajax({
-      url: '/controller/kategori.php?action=save',
+      url: '/pengaduan/controller/kategori.php?action=save',
       type: 'POST',
       data: formData,
       success: function(response) {
@@ -105,7 +105,7 @@
   function deleteKategori(data) {
     if (confirm('Apakah Anda yakin ingin menghapus kategori ini?')) {
       $.ajax({
-        url: '/controller/kategori.php?action=delete&id=' + data,
+        url: '/pengaduan/controller/kategori.php?action=delete&id=' + data,
         type: 'GET',
         success: function(response) {
           if (response.status === 'success') {
@@ -123,7 +123,7 @@
   function editKategori(data) {
     console.log(data);
     $.ajax({
-      url: '/controller/kategori.php?action=edit&id=' + data,
+      url: '/pengaduan/controller/kategori.php?action=edit&id=' + data,
       type: 'GET',
       success: function(data) {
         const kategori = data.data;

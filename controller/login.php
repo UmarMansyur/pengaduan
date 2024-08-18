@@ -26,13 +26,13 @@ if (isset($_POST['login'])) {
   if ($existUser) {
     session_start();
     $_SESSION['user'] = $existUser;
-    echo "<script>location.href = '/'</script>";
+    echo "<script>location.href = '/pengaduan/index.php'</script>";
   } else {
     echo "<script>alert('Username atau password salah!')</script>";
-    echo "<script>location.href = '/'</script>";
+    echo "<script>location.href = '/pengaduan/index.php'</script>";
   }
 } else {
-  echo "<script>location.href = '/'</script>";
+  echo "<script>location.href = '/pengaduan/index.php'</script>";
 }
 
 ?>

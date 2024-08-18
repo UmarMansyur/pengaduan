@@ -9,13 +9,9 @@
             sekarang
             dan kami akan segera menanganinya.
           </p>
-          <?php if (empty($_SESSION['user'])) : ?>
-            <button type="button" class="btn btn-lg p-3 btn-brand px-4 text-uppercase rounded-pill fw-semibold fs-18" data-bs-toggle="modal" data-bs-target="#login-modal">Lapor Sekarang!</button>
-          <?php else : ?>
           <div class="d-flex align-items-center my-3">
             <a href="?page=lapor" class="btn btn-lg p-3 btn-brand px-4 text-uppercase rounded-pill fw-semibold fs-18">Lapor Sekarang!</a>
           </div>
-          <?php endif; ?>
         </div>
         <div class="col-md-7 text-end d-none d-md-block">
           <img src="./views/assets/img/image.png" alt="report" class="img-fluid">
@@ -75,75 +71,64 @@
       </div>
       <div class="row">
         <div class="col-md-12 text-center mt-3">
-          <button class="btn btn-outline-brand px-4 rounded-1">
+          <a href="/pengaduan/index.php?page=about-us" class="btn btn-outline-brand px-4 rounded-1">
             Pelajari Lebih Lanjut
-          </button>
+          </a>
         </div>
       </div>
     </div>
   </section>
-  <section class="bg-brand text-white py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h3 class="text-center fs-48 text-uppercase mb-3">
-            Jumlah Laporan Sekarang
-          </h3>
-          <h1 class="text-center display-3 fw-bold text-uppercase">
-            1000
-          </h1>
+  <?php
+  $pengaduang = $conn->query("SELECT COUNT(*) as total FROM pengaduan")->fetch_assoc();
+  if ($pengaduang['total'] > 0) :
+  ?>
+    <section class="bg-brand text-white py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h3 class="text-center fs-48 text-uppercase mb-3">
+              Jumlah Laporan Sekarang
+            </h3>
+            <h1 class="text-center display-3 fw-bold text-uppercase">
+              <?= $pengaduang['total'] ?>
+            </h1>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-  <section>
-    <div class="container">
-      <div class="row py-5">
-        <div class="col-12">
-          <h3 class="text-center text-brand fs-28 fw-bold text-uppercase my-4">
-            Kategori Laporan
-          </h3>
+    </section>
+
+
+    <section>
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-12">
+            <h3 class="text-center text-brand fs-28 fw-bold text-uppercase my-4">
+              Kategori Laporan
+            </h3>
+          </div>
+        </div>
+        <div class="row mb-5 pb-5">
+          <?php
+          $sql = "SELECT COUNT(*) as total, nama FROM pengaduan JOIN kategori_layanan ON pengaduan.kategori_layanan_id = kategori_layanan.id GROUP BY nama ORDER BY total DESC LIMIT 4";
+          $result = $conn->query($sql);
+          while ($row = $result->fetch_assoc()) :
+          ?>
+            <div class="col-md-3">
+              <div class="card shadow-sm border-0">
+                <div class="card-body text-center">
+                  <h3 class="fs-24 fw-bold text-uppercase"><?= $row['nama'] ?></h3>
+                  <h1 class="fs-28 fw-bold text-uppercase"><?= $row['total'] ?></h1>
+                </div>
+              </div>
+            </div>
+          <?php endwhile; ?>
         </div>
       </div>
-      <div class="row mb-5 pb-5">
-        <div class="col-md-3">
-          <h3 class="text-center fs-24 fw-bold text-uppercase mb-3">
-            SOP Laporan
-          </h3>
-          <h1 class="text-center fs-28 fw-bold text-uppercase">
-            1000
-          </h1>
-        </div>
-        <div class="col-md-3">
-          <h3 class="text-center fs-24 fw-bold text-uppercase mb-3">
-            SOP Laporan
-          </h3>
-          <h1 class="text-center fs-28 fw-bold text-uppercase">
-            1000
-          </h1>
-        </div>
-        <div class="col-md-3">
-          <h3 class="text-center fs-24 fw-bold text-uppercase mb-3">
-            SOP Laporan
-          </h3>
-          <h1 class="text-center fs-28 fw-bold text-uppercase">
-            1000
-          </h1>
-        </div>
-        <div class="col-md-3">
-          <h3 class="text-center fs-24 fw-bold text-uppercase mb-3">
-            SOP Laporan
-          </h3>
-          <h1 class="text-center fs-28 fw-bold text-uppercase">
-            1000
-          </h1>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  <?php endif; ?>
   <section class="bg-white">
     <div class="container" id="saran">
-      <form action="" method="post">
+      <form action="/pengaduan/controller/kritik.php" method="post">
         <div class="container">
           <div class="row">
             <div class="row">
@@ -153,19 +138,19 @@
               <div class="col-lg-6 py-5 p-lg-6">
                 <div class="col-12 mb-3">
                   <label for="nama" class="form-label">Nama</label>
-                  <input type="text" class="form-control" name="nama" placeholder="Nama Anda">
+                  <input type="text" class="form-control" name="nama" placeholder="Ketik nama anda" required>
                 </div>
                 <div class="col-12 mb-3">
-                  <label for="inputEmail4" class="form-label">E-Mail</label>
-                  <input type="email" class="form-control" name="email" placeholder="Masukkan Email">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" name="email" placeholder="Ketik email anda" required>
                 </div>
                 <div class="col-12 mb-3">
-                  <label for="alamatLengkap" class="form-label ">Sampaikan Saran &amp; Kritik Anda</label>
-                  <textarea class="form-control" name="alamat" rows="5"
-                    placeholder="Masukkan Alamat Lengkap"></textarea>
+                  <label for="deskripsi" class="form-label ">Sampaikan Saran &amp; Kritik Anda</label>
+                  <textarea class="form-control" name="deskripsi" rows="5" required
+                    placeholder="Ketikkan kritik anda ..."></textarea>
                 </div>
                 <div class="d-grid gap-2 mb-3 pb-5">
-                  <button class="btn btn-brand" name="save" type="submit">KIRIM</button>
+                  <button class="btn btn-brand" name="submit" type="submit">KIRIM</button>
                 </div>
               </div>
 

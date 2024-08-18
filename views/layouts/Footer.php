@@ -26,7 +26,7 @@
               </a>
             </li>
             <li>
-              <a href="" class="text-decoration-none text-dark fs-12">
+              <a href="https://pamekasankab.go.id/" class="text-decoration-none text-dark fs-12">
                 <i class="bx bx-chevron-right"></i> Website Pemerintah Kabupaten Pamekasan
               </a>
             </li>

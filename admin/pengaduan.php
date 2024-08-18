@@ -163,7 +163,7 @@ switch ($page) {
 
     async function detail(data, page) {
       data = JSON.parse(data);
-      const repsonse = await fetch('/controller/lampiran.php?id=' + data.id_pengaduan);
+      const repsonse = await fetch('/pengaduan/controller/lampiran.php?id=' + data.id_pengaduan);
       const result = await repsonse.json();
       data.lampiran = result.lampiran;
       const html = `
@@ -264,15 +264,15 @@ switch ($page) {
         ${data.status_pengaduan === 'Ditolak' ? `<h4 class="font-size-18 mb-3">Alasan Penolakan: </h4>
         <p>${data.alasan_penolakan}</p>` : ''}
         ${data.status_pengaduan === 'Pending' ? `
-          <a href="/controller/lampiran.php?id=${data.id_pengaduan}&status=Diproses&page=${page}" class="btn btn-primary">Proses</a>
+          <a href="/pengaduan/controller/lampiran.php?id=${data.id_pengaduan}&status=Diproses&page=${page}" class="btn btn-primary">Proses</a>
           <button class="btn btn-danger" onclick="openModalPenolakan(${data.id_pengaduan}, '${page}')" data-bs-dismiss="modal">Tolak</button>
         ` : ''}
         ${data.status_pengaduan === 'Diproses' ? `
-          <a href="/controller/lampiran.php?id=${data.id_pengaduan}&status=Selesai&page=${page}" class="btn btn-success">Selesai</a>
+          <a href="/pengaduan/controller/lampiran.php?id=${data.id_pengaduan}&status=Selesai&page=${page}" class="btn btn-success">Selesai</a>
           <button class="btn btn-danger" onclick="openModalPenolakan(${data.id_pengaduan}, '${page}')" data-bs-dismiss="modal">Tolak</button>
         ` : ''}
         ${data.status_pengaduan === 'Selesai' ? `
-          <a href="/controller/lampiran.php?id=${data.id_pengaduan}&status=Pending&page=${page}" class="btn btn-primary">Pending</a>
+          <a href="/pengaduan/controller/lampiran.php?id=${data.id_pengaduan}&status=Pending&page=${page}" class="btn btn-primary">Pending</a>
         ` : ''}
       `;
 
@@ -297,6 +297,6 @@ switch ($page) {
         alert('Alasan penolakan harus diisi.');
         return;
       }
-      window.location.href = `/controller/lampiran.php?id=${pengaduanId}&status=Ditolak&alasan=${encodeURIComponent(alasan)}&page=${page}`;
+      window.location.href = `/pengaduan/controller/lampiran.php?id=${pengaduanId}&status=Ditolak&alasan=${encodeURIComponent(alasan)}&page=${page}`;
     }
   </script>

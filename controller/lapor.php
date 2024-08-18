@@ -17,7 +17,7 @@ function getFiles($fileInputName)
 
   if (empty($_FILES[$fileInputName])) {
     echo "<script>alert('Tidak ada file yang diunggah!')</script>";
-    echo "<script>window.location.href = 'index.php?page=lapor'</script>";
+    echo "<script>window.location.href = '/pengaduan/index.php?page=lapor'</script>";
     return null;
   }
 
@@ -30,7 +30,7 @@ function getFiles($fileInputName)
       // Memeriksa ukuran file
       if ($_FILES[$fileInputName]["size"][$i] > $maxSize) {
         echo "<script>alert('Ukuran file " . $_FILES[$fileInputName]['name'][$i] . " terlalu besar!')</script>";
-        echo "<script>window.location.href = 'index.php?page=lapor'</script>";
+        echo "<script>window.location.href = '/pengaduan/index.php?page=lapor'</script>";
         return null;
       }
 
@@ -46,7 +46,7 @@ function getFiles($fileInputName)
       } else {
         // Jika terjadi kesalahan saat unggah file
         echo "<script>alert('Gagal mengunggah file " . $_FILES[$fileInputName]['name'][$i] . "')</script>";
-        echo "<script>window.location.href = 'index.php?page=lapor'</script>";
+        echo "<script>window.location.href = '/pengaduan/index.php?page=lapor'</script>";
         return null;
       }
     }
@@ -55,7 +55,7 @@ function getFiles($fileInputName)
     return $uploadedFiles;
   } else {
     echo "<script>alert('Tidak ada file yang diunggah!')</script>";
-    echo "<script>window.location.href = '/index.php?page=lapor'</script>";
+    echo "<script>window.location.href = '/pengaduan/index.php?page=lapor'</script>";
     return null;
   }
 }
@@ -87,7 +87,7 @@ if (isset($_POST['simpan'])) {
     $result = $conn->multi_query($query);
     if (!$result) {
       echo "<script>alert('Gagal mengunggah lampiran!')</script>";
-      echo "<script>window.location.href = 'index.php?page=lapor'</script>";
+      echo "<script>window.location.href = '/pengaduan/index.php?page=lapor'</script>";
     }
   }
 
@@ -146,7 +146,7 @@ try {
 
     $mail->send();
     echo "<script>alert('Laporan berhasil dikirim!')</script>";
-    echo "<script>window.location.href = '/index.php?page=lapor'</script>";
+    echo "<script>window.location.href = '/pengaduan/index.php?page=lapor'</script>";
 } catch (Exception $e) {
     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 }
@@ -157,7 +157,7 @@ try {
 
 
 
-  // echo "<script>window.location.href = '/index.php?page=lapor'</script>";
+  // echo "<script>window.location.href = '/pengaduan/index.php?page=lapor'</script>";
 } else {
-  echo "<script>window.location.href = '/index.php?page=lapor'</script>";
+  echo "<script>window.location.href = '/pengaduan/index.php?page=lapor'</script>";
 }

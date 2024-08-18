@@ -58,7 +58,7 @@ if (isset($_POST['simpan'])) {
 
     if ($result) {
       echo "<script>alert('Registrasi berhasil! Silahkan login.')</script>";
-      echo "<script>location.href = '/'</script>";
+      echo "<script>location.href = '/pengaduan/index.php'</script>";
     } else {
       echo "<script>alert('Registrasi gagal! Silahkan coba lagi.')</script>";
       echo "<script>location.href = '/register.php'</script>";

@@ -17,3 +17,7 @@ $deskripsi = $conn->query("SELECT * FROM tentang_kami")->fetch_assoc()['deskrips
     </div>
   </section>
 </main>
+
+<script>
+  document.title = 'Tentang Lapor | Dinas Pendidikan Kabupaten Pamekasan';
+</script>

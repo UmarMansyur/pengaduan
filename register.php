@@ -28,7 +28,7 @@
                   <h3 class="text-center">DAFTAR</h3>
                   <p class="text-center">Silahkan daftar untuk membuat akun baru</p>
                   <hr>
-                  <form action="./controller/register.php" method="POST">
+                  <form action="/pengaduan/controller/register.php" method="POST">
                     <div class="row">
                       <div class="col-md-6 mb-3">
                         <label for="nama_lengkap" class="form-label fw-semibold"><sup class="text-danger">*</sup>Nama Lengkap:</label>
@@ -78,7 +78,7 @@
                       </div>
                       <div class="col-md-12 mb-3">
                         <button type="submit" class="btn btn-brand w-100" id="simpan" name="simpan">Daftar</button>
-                        <span class="d-block text-center mt-3">Sudah punya akun? <a href="/" class="text-decoration-none fw-semibold text-brand">Kembali ke beranda</a></span>
+                        <span class="d-block text-center mt-3">Sudah punya akun? <a href="/pengaduan/index.php" class="text-decoration-none fw-semibold text-brand">Kembali ke beranda</a></span>
                       </div>
                     </div>
                   </form>

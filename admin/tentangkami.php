@@ -31,7 +31,7 @@ if ($id) {
         <h4 class="card-title">Tentang Lapor</h4>
         <p class="card-title-desc">Halaman ini digunakan untuk mengelola deskripsi tentang Lapor.</p>
         <h4 class="card-title mb-3">Deskripsi: </h4>
-        <form id="tentangKamiForm" action="/controller/tentangkami.php" method="POST">
+        <form id="tentangKamiForm" action="/pengaduan/controller/tentangkami.php" method="POST">
           <textarea name="deskripsi" id="editor1"><?= htmlspecialchars($deskripsi) ?></textarea>
           <input type="hidden" name="id" value="<?= $id ?>">
           <div class="text-center">

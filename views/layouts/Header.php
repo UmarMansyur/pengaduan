@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg py-3 bg-white shadow-sm flex-shrink-0 d-flex w-100 justify-content-between align-items-center position-fixed top-0 start-0 end-0 z-index-1000 d-none d-sm-block">
   <div class="container">
     <div class="d-flex align-items-center w-100">
-      <a class="navbar-brand d-flex flex-row align-items-center" href="/">
+      <a class="navbar-brand d-flex flex-row align-items-center" href="/pengaduan/index.php">
         <img src="./views/assets/img/logo.png" alt="logo" class="logo" width="50">
         <div class="d-flex flex-column">
           <h5 class="fw-bold mb-0">Dinas Pendidikan</h5>
@@ -10,7 +10,7 @@
 
       </a>
       <div>
-        <a href="/" class="text-decoration-none text-muted ms-5 <?= empty($_GET['page']) || $_GET['page'] == 'home' ? 'active' : '' ?>">
+        <a href="/pengaduan/index.php" class="text-decoration-none text-muted ms-5 <?= empty($_GET['page']) || $_GET['page'] == 'home' ? 'active' : '' ?>">
           Beranda
         </a>
         <a href="?page=lapor" class="text-decoration-none text-muted ms-5 <?= isset($_GET['page']) && $_GET['page'] == 'lapor' ? 'active' : '' ?>">
@@ -19,13 +19,13 @@
         <a href="?page=monitoring" class="text-decoration-none text-muted ms-5 <?= isset($_GET['page']) && $_GET['page'] == 'monitoring' ? 'active' : '' ?>">
           Monitoring Laporan
         </a>
-        <a href="?page=about-us" class="text-decoration-none text-muted ms-5" <?= isset($_GET['page']) && $_GET['page'] == 'about-us' ? 'active' : '' ?>>
+        <a href="?page=about-us" class="text-decoration-none text-muted ms-5 <?= isset($_GET['page']) && $_GET['page'] == 'about-us' ? 'active' : '' ?>">
           Tentang Lapor
         </a>
       </div>
       <div class="d-flex align-items-center ms-auto">
         <?php if (isset($_SESSION['user'])) : ?>
-         <a href="/admin" class="btn px-3 py-2 btn-brand text-white">
+         <a href="/pengaduan/admin/index.php" class="btn px-3 py-2 btn-brand text-white">
           Administrasi Situs
         </a>
         <?php else: ?>    
@@ -54,7 +54,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="./controller/login.php" method="POST">
+        <form action="/pengaduan/controller/login.php" method="POST">
           <div class="mb-3">
             <label for="username" class="form-label fw-bold">Username:</label>
             <input type="text" class="form-control" id="username" name="username" placeholder="Ketik username anda" required>
@@ -70,9 +70,6 @@
             <button type="submit" name="login" class="btn btn-sm px-3 w-50 py-2 btn-brand">
               <i class="bx bx-send fs-14 align-middle"></i> <span class="align-middle">Login</span>
             </button>
-          </div>
-          <div class="mb-3">
-            <span class="d-block text-center">Belum punya akun? <a href="/register.php" class="text-decoration-none fw-bold text-brand">Daftar</a></span>
           </div>
         </form>
       </div>

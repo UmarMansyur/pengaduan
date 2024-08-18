@@ -35,7 +35,7 @@ if (isset($_GET['id']) && isset($_GET['status']) && $_GET['status'] !== 'Ditolak
     // buat status menjadi huruf kecil
     $status = strtolower($status);
     echo "<script>alert('Berhasil mengubah status pengaduan menjadi $status')</script>";
-    echo "<script>document.location.href = '/admin?page=$_GET[page]';</script>";
+    echo "<script>document.location.href = '/pengaduan/admin?page=$_GET[page]';</script>";
   } else {
     echo json_encode([
       'error' => 'Gagal mengubah status pengaduan'
@@ -55,7 +55,7 @@ if (isset($_GET['status']) && $_GET['status'] === 'Ditolak' && isset($_GET['alas
 
   // Redirect setelah update
   echo "<script>alert('Berhasil menolak pengaduan')</script>";
-  echo "<script>document.location.href = '/admin?page=$_GET[page]';</script>";
+  echo "<script>document.location.href = '/pengaduan/admin?page=$_GET[page]';</script>";
   exit;
 }
 

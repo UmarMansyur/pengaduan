@@ -16,8 +16,8 @@ if ($id) {
 }
 
 if ($stmt->execute()) {
-    echo "<script>alert('Data berhasil disimpan!'); window.location.href = '/admin?page=tentang-kami';</script>";
+    echo "<script>alert('Data berhasil disimpan!'); window.location.href = '/pengaduan/admin?page=tentang-kami';</script>";
 } else {
-    echo "<script>alert('Terjadi kesalahan saat menyimpan data.'); window.location.href = '/admin?page=tentang-kami';</script>";
+    echo "<script>alert('Terjadi kesalahan saat menyimpan data.'); window.location.href = '/pengaduan/admin?page=tentang-kami';</script>";
 }
 ?>

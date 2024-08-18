@@ -10,6 +10,11 @@ class Connection {
   private $pass = '';
   private $name = 'pengaduan';
 
+  // private $host = '127.0.0.1';
+  // private $user = 'pendidik_pengadu';
+  // private $pass = 'EhtXpeg4c0Dh';
+  // private $name = 'pendidik_pengaduan';
+
   private function __construct() {
     try {
       $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->name);
