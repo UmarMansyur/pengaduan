@@ -63,6 +63,7 @@ if (empty($isDetail)):
             <div class="row">
               <div class="col-12">
                 <div class="mb-3">
+                  <input type="hidden" id="id" name="id" value="">
                   <label for="kuisioner" class="form-label">Nama Kuisioner:</label>
                   <input type="text" class="form-control" id="kuisioner" name="kuisioner" required>
                 </div>
@@ -172,12 +173,12 @@ if (empty($isDetail)):
   }
 
   function editKuisioner(data) {
-    console.log(data);
     $.ajax({
       url: '/pengaduan/controller/kuisioner.php?action=edit&id=' + data,
       type: 'GET',
       success: function(data) {
         const kategori = data.data;
+        $('#id').val(kategori.id);
         $('#kuisioner').val(kategori.nama);
         $('#jumlah-soal').val(kategori.jumlah_soal);
         $('#jumlah-jawaban').val(kategori.jumlah_jawaban);

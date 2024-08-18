@@ -51,7 +51,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-primary" onclick="submitKategori()">Simpan</button>
+        <button type="button" class="btn btn-primary" onclick="submitKategori()" data-bs-dismiss="modal">Simpan</button>
       </div>
     </div>
   </div>
@@ -86,7 +86,6 @@
 
   function submitKategori() {
     const formData = $('#kategoriForm').serialize();
-
     $.ajax({
       url: '/pengaduan/controller/kategori.php?action=save',
       type: 'POST',
@@ -121,7 +120,6 @@
 
 
   function editKategori(data) {
-    console.log(data);
     $.ajax({
       url: '/pengaduan/controller/kategori.php?action=edit&id=' + data,
       type: 'GET',

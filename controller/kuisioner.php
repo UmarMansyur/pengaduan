@@ -47,16 +47,15 @@ if ($action == 'read') {
   $nama = mysqli_real_escape_string($conn, $_POST['kuisioner']);
   $jumlah_soal = mysqli_real_escape_string($conn, $_POST['jumlah_soal']);
   $jumlah_jawaban = mysqli_real_escape_string($conn, $_POST['jumlah_jawaban']);
-  $status = mysqli_real_escape_string($conn, $_POST['status']);
 
   if ($id) {
     // Update
-    $stmt = $conn->prepare("UPDATE kuisioner SET nama = ?, jumlah_soal = ?, jumlah_jawaban = ?, status = ? WHERE id = ?");
-    $stmt->bind_param('siiii', $nama, $jumlah_soal, $jumlah_jawaban, $status, $id);
+    $stmt = $conn->prepare("UPDATE kuisioner SET nama = ?, jumlah_soal = ?, jumlah_jawaban = ? WHERE id = ?");
+    $stmt->bind_param('siii', $nama, $jumlah_soal, $jumlah_jawaban, $id);
   } else {
     // Insert
-    $stmt = $conn->prepare("INSERT INTO kuisioner (nama, jumlah_soal, jumlah_jawaban, status) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param('siib', $nama, $jumlah_soal, $jumlah_jawaban, $status);
+    $stmt = $conn->prepare("INSERT INTO kuisioner (nama, jumlah_soal, jumlah_jawaban) VALUES (?, ?, ?)");
+    $stmt->bind_param('sii', $nama, $jumlah_soal, $jumlah_jawaban);
     $status = false;
   }
 

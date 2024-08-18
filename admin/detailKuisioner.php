@@ -124,6 +124,9 @@ $jumlah_soalDB = $conn->query("SELECT COUNT(*) as jumlah FROM soal WHERE kuision
                 $soalQuery->execute();
                 $soalResult = $soalQuery->get_result();
                 $soalData = $soalResult->fetch_all(MYSQLI_ASSOC);
+                if(!$soalData) {
+                  return;
+                }
 
                 $jawaban = [];
                 $sql = "SELECT * FROM jawaban WHERE soal_id IN (" . implode(",", array_fill(0, count($soalData), "?")) . ")";
@@ -144,12 +147,14 @@ $jumlah_soalDB = $conn->query("SELECT COUNT(*) as jumlah FROM soal WHERE kuision
                   $result[$soal_id]['jawaban'][] = $jawaban;
                 }
                 $soalQuery->close();
+                $no = 1;
                 ?>
                 <?php
                 foreach ($result as $index => $soal):
+
                 ?>
                   <tr>
-                    <td class="text-center"><?= $index ?></td>
+                    <td class="text-center"><?= $no ?></td>
                     <td>
                       <h6>
                         <?= $soal['soal'] ?>
@@ -176,7 +181,7 @@ $jumlah_soalDB = $conn->query("SELECT COUNT(*) as jumlah FROM soal WHERE kuision
                       </a>
                     </td>
                   </tr>
-                <?php endforeach; ?>
+                <?php $no++; endforeach; ?>
               </tbody>
             </table>
           </div>

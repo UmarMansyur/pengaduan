@@ -34,14 +34,11 @@ if ($action == 'read') {
   ]);
 } elseif ($action == 'save') {
   $id = isset($_POST['id']) ? $_POST['id'] : '';
-  $nama = mysqli_real_escape_string($conn, $nama);
-
+  $nama = mysqli_real_escape_string($conn, $_POST['nama']);
   if ($id) {
-    // Update
     $stmt = $conn->prepare("UPDATE kategori_layanan SET nama = ? WHERE id = ?");
     $stmt->bind_param('si', $nama, $id);
   } else {
-    // Insert
     $stmt = $conn->prepare("INSERT INTO kategori_layanan (nama) VALUES (?)");
     $stmt->bind_param('s', $nama);
   }

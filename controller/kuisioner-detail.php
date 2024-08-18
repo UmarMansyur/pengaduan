@@ -10,11 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $kuisionerId = $conn->real_escape_string($_POST['kuisionerId']);
     $soalId = $conn->real_escape_string($_POST['soalId']);
     $soal = $conn->real_escape_string($_POST['soal']);
-    $jumlah_jawaban = intval($_POST['jumlah_jawaban']); // Pastikan jumlah_jawaban diambil dari form
+    $jumlah_jawaban = intval($_POST['jumlah_jawaban']);
 
-    // Simpan atau update data soal
     if (!empty($soalId)) {
-        // Update soal yang sudah ada
         $stmt = $conn->prepare("UPDATE soal SET soal = ? WHERE id = ?");
         $stmt->bind_param('si', $soal, $soalId);
         $stmt->execute();
