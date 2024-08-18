@@ -83,7 +83,7 @@
                     <input type="file" class="form-control" name="lampiran[]" multiple accept="image/*,.pdf">
                   </div>
                   <div class="col-md-12 mb-3 text-end">
-                    <button class="btn btn-brand px-4" type="submit" name="simpan">
+                    <button class="btn btn-brand px-4" type="submit" name="simpan" id="simpan" onclick="loader()"
                       <i class="bx bx-send"></i> Kirim
                     </button>
                   </div>
@@ -99,4 +99,7 @@
 
 <script>
   document.title = 'Lapor Pengaduan';
+  function loader() {
+    $('#simpan').html('<i class="bx bx-loader bx-spin"></i> Loading...');
+  }
 </script>
