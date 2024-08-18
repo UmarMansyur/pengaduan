@@ -40,16 +40,16 @@ $data = $data->fetch_assoc();
                   </p>
                   <div class="row">
                     <div class="col-md-6 mb-2">
-                      <label for="responden" class="form-label">Nama Responden: </label>
+                      <label for="responden" class="form-label"><sup class="text-danger">*</sup>Nama Responden: </label>
                       <input type="text" class="form-control" id="responden" name="responden" required autofocus placeholder="Ketik nama anda">
                       <input type="hidden" name="kuisioner_id" value="<?= $data['id']; ?>">
                     </div>
                     <div class="col-md-6">
-                      <label for="umur" class="form-label">Usia: </label>
-                      <input type="number" class="form-control" id="umur" name="umur" required placeholder="Ketik usia anda">
+                      <label for="umur" class="form-label"><sup class="text-danger">*</sup>Usia: </label>
+                      <input type="text" class="form-control" id="umur" name="umur" required placeholder="Ketik usia anda" inputmode="numeric" pattern="[0-9]*" maxlength="2" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');">
                     </div>
                     <div class="col-md-4 mb-2">
-                      <label for="jenis_kelamin" class="form-label">Jenis Kelamin: </label>
+                      <label for="jenis_kelamin" class="form-label"><sup class="text-danger">*</sup>Jenis Kelamin: </label>
                       <select class="form-select" id="jenis_kelamin" name="jenis_kelamin" required>
                         <option value="" disabled>Pilih Jenis Kelamin</option>
                         <option value="L">Laki-laki</option>
@@ -57,7 +57,7 @@ $data = $data->fetch_assoc();
                       </select>
                     </div>
                     <div class="col-md-4 mb-2">
-                      <label for="pendidikan" class="form-label">Pendidikan: </label>
+                      <label for="pendidikan" class="form-label"><sup class="text-danger">*</sup>Pendidikan: </label>
                       <select class="form-select" id="pendidikan" name="pendidikan" required>
                         <option value="" disabled>Pilih Pendidikan</option>
                         <option value="SD">SD</option>
@@ -69,7 +69,7 @@ $data = $data->fetch_assoc();
                       </select>
                     </div>
                     <div class="col-md-4 mb-2">
-                      <label for="pekerjaan" class="form-label">Pekerjaan: </label>
+                      <label for="pekerjaan" class="form-label"><sup class="text-danger">*</sup>Pekerjaan: </label>
                       <select class="form-select" id="pekerjaan" name="pekerjaan" required>
                         <option value="" disabled>Pilih Jenis Pekerjaan</option>
                         <option value="PNS">PNS</option>

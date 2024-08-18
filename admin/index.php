@@ -35,10 +35,10 @@ if (!isset($_SESSION['user'])) {
     <!-- App Css-->
     <link href="/pengaduan/admin/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css">
     <style>
-.ck-editor__editable_inline {
-    min-height: 450px;
-}
-</style>
+        .ck-editor__editable_inline {
+            min-height: 450px;
+        }
+    </style>
 </head>
 
 <body data-sidebar="dark" data-topbar="light">
@@ -58,39 +58,99 @@ if (!isset($_SESSION['user'])) {
                         switch ($page) {
                             case 'dashboard':
                                 include 'dashboard.php';
+                        ?>
+                                <script>
+                                    document.title = 'Dashboard - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+                                </script>
+                            <?php
                                 break;
                             case 'kuisioner':
                                 include 'kuisioner.php';
+                            ?>
+                                <script>
+                                    document.title = 'Kuisioner - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+                                </script>
+                            <?php
                                 break;
                             case 'statistik-kuisioner':
                                 include 'statistik-kuisioner.php';
+                            ?>
+                                <script>
+                                    document.title = 'Statistik Kuisioner - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+                                </script>
+                            <?php
                                 break;
                             case 'statistik-pengaduan':
                                 include 'statistik-pengaduan.php';
+                            ?>
+                                <script>
+                                    document.title = 'Statistik Pengaduan - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+                                </script>
+                            <?php
                                 break;
                             case 'pending':
                                 include 'pengaduan.php';
+                            ?>
+                                <script>
+                                    document.title = 'Pengaduan - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+                                </script>
+                            <?php
                                 break;
                             case 'diproses':
                                 include 'pengaduan.php';
+                            ?>
+                                <script>
+                                    document.title = 'Pengaduan - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+                                </script>
+                            <?php
                                 break;
                             case 'selesai':
                                 include 'pengaduan.php';
+                            ?>
+                                <script>
+                                    document.title = 'Pengaduan - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+                                </script>
+                            <?php
                                 break;
                             case 'ditolak':
                                 include 'pengaduan.php';
+                            ?>
+                                <script>
+                                    document.title = 'Pengaduan - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+                                </script>
+                            <?php
                                 break;
                             case 'kategori-layanan':
                                 include 'kategori_layanan.php';
+                            ?>
+                                <script>
+                                    document.title = 'Kategori Tujuan Layanan - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+                                </script>
+                            <?php
                                 break;
                             case 'kritik-saran':
                                 include 'kritik_saran.php';
+                            ?>
+                                <script>
+                                    document.title = 'Kritik & Saran - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+                                </script>
+                            <?php
                                 break;
                             case 'tentang-kami':
                                 include 'tentangkami.php';
+                            ?>
+                                <script>
+                                    document.title = 'Tentang Lapor - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+                                </script>
+                            <?php
                                 break;
                             default:
                                 include 'dashboard.php';
+                            ?>
+                                <script>
+                                    document.title = 'Dashboard - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+                                </script>
+                        <?php
                                 break;
                         }
                         ?>

@@ -34,22 +34,63 @@ session_start();
 
     if (isset($_GET['page']) == "") {
       include './views/home.php';
+    ?>
+      <script>
+        document.title = 'Home - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+      </script>
+    <?php
+
     } else if (isset($_GET['page']) && $_GET['page'] == 'lapor') {
       include './views/lapor.php';
+    ?>
+      <script>
+        document.title = 'Lapor - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+      </script>
+    <?php
     } else if (isset($_GET['page']) && $_GET['page'] == 'monitoring') {
       include './views/monitoring.php';
+    ?>
+      <script>
+        document.title = 'Monitoring - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+      </script>
+    <?php
     } else if (isset($_GET['page']) && $_GET['page'] == 'about-us') {
       include './views/tentang-lapor.php';
+    ?>
+      <script>
+        document.title = 'Tentang Lapor - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+      </script>
+    <?php
     } else if (isset($_GET['page']) && $_GET['page'] == 'ikm') {
       include './views/ikm.php';
+    ?>
+      <script>
+        document.title = 'IKM - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+      </script>
+      <?php
     } else if (isset($_GET['page']) && $_GET['page'] == 'detail-monitoring') {
       if (isset($_GET['id'])) {
         include './views/detail-monitoring.php';
+      ?>
+        <script>
+          document.title = 'Detail - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+        </script>
+      <?php
       } else {
         include './views/404.php';
+      ?>
+        <script>
+          document.title = '404 - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+        </script>
+      <?php
       }
     } else {
       include './views/404.php';
+      ?>
+      <script>
+        document.title = '404 - Dinas Pendidikan dan Kebudayaan Kabupaten Pamekasan';
+      </script>
+    <?php
     }
     include './views/layouts/Footer.php';
     ?>

@@ -11,7 +11,7 @@ $conn = Connection::getInstance()->getConnection();
 
 function getFiles($fileInputName)
 {
-  $target_dir = "../uploads/";
+  $target_dir = "/pengaduan/uploads/";
   $maxSize = 5 * 1024 * 1024; // 5MB
   $uploadedFiles = [];
 
