@@ -9,6 +9,8 @@ DROP TABLE IF EXISTS pengaduan;
 DROP TABLE IF EXISTS kategori_layanan;
 DROP TABLE IF EXISTS pengguna;
 
+DROP TABLE IF EXISTS tentang_kami;
+
 CREATE TABLE pengguna (
     id BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nama_lengkap VARCHAR(255) NOT NULL,
@@ -29,6 +31,7 @@ CREATE TABLE pengaduan (
     nama_pelapor VARCHAR(255) NOT NULL,
     email VARCHAR(100) NOT NULL,
     jenis_kelamin ENUM('L', 'P') NOT NULL,
+    alamat_lengkap VARCHAR(255) NULL,
     usia INTEGER NULL,
     phone VARCHAR(15) NULL,
     nik VARCHAR(16) NULL,
@@ -92,6 +95,11 @@ CREATE TABLE file_lampiran (
     CONSTRAINT fk_pengaduan_file_lampiran FOREIGN KEY (pengaduan_id) REFERENCES pengaduan(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+CREATE TABLE tentang_kami (
+    id BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    deskripsi TEXT NOT NULL
+);
+
 INSERT INTO kategori_layanan (nama) VALUES 
 ('Pelayanan Publik'), 
 ('Pelayanan Kesehatan'), 
@@ -102,6 +110,7 @@ INSERT INTO kategori_layanan (nama) VALUES
 ('Pelayanan Pariwisata'), 
 ('Pelayanan Perizinan'), 
 ('Pelayanan Lainnya');
+
 
 INSERT INTO pengguna (nama_lengkap, email, username, password, type, thumbnail) VALUES 
 ('Admin', 'admin@gmail.com', 'admin', '$2y$10$uoS.DRftiBx.4N0.yVurHesGv8h6JY4eE.0xFr0qvKd3U4lR1U9lC', 'admin', 'https://ik.imagekit.io/8zmr0xxik/blob_c2rRi4vdU?updatedAt=1709077347010');

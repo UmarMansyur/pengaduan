@@ -44,11 +44,18 @@
                         const html = `
                             <div class="col-md-12">
                               <h4 class="fs-18 my-3">Identitas Pelapor: </h4>
-                              <h6 class="fs-14">Nama Pelapor: ${data.data.nama_pelapor}</h6>
-                              <h6 class="fs-14">Nik: ${data.data.nik}</h6>
-                              <h6 class="fs-14">Email: ${data.data.email}</h6>
-                              <h6 class="fs-14">No. Hp: ${data.data.phone}</h6>
-                              <h6 class="fs-14">Jenis Kelamin : ${data.data.jenis_kelamin === 'L' ? 'Laki-laki' : 'Perempuan'}</h6>
+                              <h6 class="fs-14 mb-1 fw-bold">Nama Pelapor:</h6>
+                              <p class="mb-1">${data.data.nama_pelapor}</p>
+                              <h6 class="fs-14 mb-1 fw-bold">NIK:</h6>
+                              <p class="mb-1">${data.data.nik}</p>
+                              <h6 class="fs-14 mb-1 fw-bold">Email:</h6>
+                              <p class="mb-1">${data.data.email}</p>
+                              <h6 class="fs-14 mb-1 fw-bold">No. Hp:</h6>
+                              <p class="mb-1">${data.data.phone}</p>
+                              <h6 class="fs-14 mb-1 fw-bold">Jenis Kelamin:</h6>
+                              <p class="mb-1">${data.data.jenis_kelamin === 'L' ? 'Laki-laki' : 'Perempuan'}</p>
+                              <h6 class="fs-14 mb-1 fw-bold">Alamat Pelapor:</h6>
+                              <p class="mb-1">${data.data.alamat_lengkap}</p>
                               <h4 class="fs-18 my-3">Detail Laporan: </h4>
                               <div class="table-responsive">
                                 <table class="table table-hover table-stripped table-bordered">

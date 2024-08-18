@@ -37,6 +37,11 @@
                       <option value="P">Perempuan</option>
                     </select>
                   </div>
+                  <div class="col-md-12 mb-3">
+                    <label for="alamat_lengkap" class="form-label fw-bold"><sup class="text-danger">*</sup>Alamat Pelapor: </label>
+                    <textarea type="text" class="form-control" name="alamat_lengkap" placeholder="Ketik alamat lengkap anda"
+                      rows="5"></textarea>
+                  </div>
                  
                   <div class="col-md-12 mb-3">
                     <label for="title" class="form-label fw-bold"><sup class="text-danger">*</sup>Judul

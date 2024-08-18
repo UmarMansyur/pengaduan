@@ -67,7 +67,7 @@
           <ul class="sub-menu mm-collapse" aria-expanded="false" style="height: 0px;">
             <li><a href="/admin?page=kategori-layanan">Kategori Tujuan Layanan</a></li>
             <li><a href="email-read.html">Kuisioner</a></li>
-            <li><a href="email-read.html">Tentang Lapor</a></li>
+            <li><a href="/admin?page=tentang-kami">Tentang Lapor</a></li>
           </ul>
         </li>
       </ul>

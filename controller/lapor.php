@@ -69,11 +69,13 @@ if (isset($_POST['simpan'])) {
   $phone = mysqli_real_escape_string($conn, $_POST['phone']);
   $nik = mysqli_real_escape_string($conn, $_POST['nik']);
   $judul_laporan = mysqli_real_escape_string($conn, $_POST['judul_laporan']);
+  $alamat_lengap = mysqli_real_escape_string($conn, $_POST['alamat_lengkap']);
   $nama_terlapor = mysqli_real_escape_string($conn, $_POST['nama_terlapor']);
   $alamat = mysqli_real_escape_string($conn, $_POST['alamat']);
+  $alamat_lengap = mysqli_real_escape_string($conn, $_POST['alamat_lengkap']);
   $kategori = $_POST['kategori'];
   $deskripsi = mysqli_real_escape_string($conn, $_POST['deskripsi']);
-  $query = "INSERT INTO pengaduan (nama_pelapor, email, jenis_kelamin, usia, phone, nik, judul_laporan, nama_terlapor, alamat, kategori_layanan_id, deskripsi) VALUES ('$nama_pelapor', '$email', '$jenis_kelamin', '$usia', '$phone', '$nik', '$judul_laporan', '$nama_terlapor', '$alamat', $kategori, '$deskripsi')";
+  $query = "INSERT INTO pengaduan (nama_pelapor, email, jenis_kelamin, usia, phone, nik, judul_laporan, nama_terlapor, alamat, kategori_layanan_id, deskripsi, alamat_lengkap) VALUES ('$nama_pelapor', '$email', '$jenis_kelamin', '$usia', '$phone', '$nik', '$judul_laporan', '$nama_terlapor', '$alamat', $kategori, '$deskripsi', '$alamat_lengap')";
   $conn->query($query);
   $lampirans = getFiles('lampiran');
   $query = "";
@@ -130,6 +132,7 @@ try {
     <p>Usia: $usia</p>
     <p>Nomor HP: $phone</p>
     <p>NIK: $nik</p>
+    <p>Alamat Pelapor: $alamat_lengap</p>
     <p>Judul Laporan: $judul_laporan</p>
     <p>Nama Terlapor: $nama_terlapor</p>
     <p>Alamat: $alamat</p>

@@ -58,19 +58,23 @@
 </div>
 
 <script>
-  let dataTable;
-
+  
   // Fungsi untuk memuat kategori
-  function loadKategori() {
+  var dataTable;
+   function loadKategori() {
     $.ajax({
       url: '/controller/kategori.php?action=read',
       type: 'GET',
       success: function(data) {
-        document.getElementById('kategoriTbody').innerHTML = data.data;
         if (dataTable) {
-          return;
+          (async () => {
+            await dataTable.clear().destroy();
+          })();
         }
-        dataTable = $('#dataTable').DataTable();
+        document.getElementById('kategoriTbody').innerHTML = data.data;
+        (async () => {
+          dataTable = $('#dataTable').DataTable();
+        })();
       }
     });
   }
