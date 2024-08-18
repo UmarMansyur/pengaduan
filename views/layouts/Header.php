@@ -22,9 +22,6 @@
         <a href="?page=about-us" class="text-decoration-none text-muted ms-5" <?= isset($_GET['page']) && $_GET['page'] == 'about-us' ? 'active' : '' ?>>
           Tentang Lapor
         </a>
-        <a href="" class="text-decoration-none text-muted ms-5">
-          Hubungi Kami
-        </a>
       </div>
       <div class="d-flex align-items-center ms-auto">
         <?php if (isset($_SESSION['user'])) : ?>

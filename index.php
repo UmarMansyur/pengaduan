@@ -33,11 +33,13 @@ session_start();
     $menu = 'home';
     if (isset($_GET['page']) == "") {
       include './views/home.php';
-    }else if (isset($_GET['page']) && $_GET['page'] == 'lapor') {
+    } else if (isset($_GET['page']) && $_GET['page'] == 'lapor') {
       include './views/lapor.php';
-    }else if (isset($_GET['page']) && $_GET['page'] == 'monitoring') {
+    } else if (isset($_GET['page']) && $_GET['page'] == 'monitoring') {
       include './views/monitoring.php';
-    }else if (isset($_GET['page']) && $_GET['page'] == 'detail-monitoring') {
+    } else if (isset($_GET['page']) && $_GET['page'] == 'about-us') {
+      include './views/tentang-lapor.php';
+    } else if (isset($_GET['page']) && $_GET['page'] == 'detail-monitoring') {
       if (isset($_GET['id'])) {
         include './views/detail-monitoring.php';
       } else {

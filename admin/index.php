@@ -31,9 +31,14 @@ if (!isset($_SESSION['user'])) {
     <!-- Responsive datatable examples -->
     <link href="/admin/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="/admin/assets/js/ckeditor.min.js"></script>
+    <script src="/admin/assets/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
     <!-- App Css-->
     <link href="/admin/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css">
+    <style>
+.ck-editor__editable_inline {
+    min-height: 450px;
+}
+</style>
 </head>
 
 <body data-sidebar="dark" data-topbar="light">

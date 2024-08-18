@@ -114,3 +114,5 @@ INSERT INTO kategori_layanan (nama) VALUES
 
 INSERT INTO pengguna (nama_lengkap, email, username, password, type, thumbnail) VALUES 
 ('Admin', 'admin@gmail.com', 'admin', '$2y$10$uoS.DRftiBx.4N0.yVurHesGv8h6JY4eE.0xFr0qvKd3U4lR1U9lC', 'admin', 'https://ik.imagekit.io/8zmr0xxik/blob_c2rRi4vdU?updatedAt=1709077347010');
+
+INSERT INTO tentang_kami (deskripsi) VALUES ('Tentang Kami');
